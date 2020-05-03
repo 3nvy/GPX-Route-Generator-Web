@@ -1,0 +1,52 @@
+{
+  "name": "gpx-route-generator-web",
+  "version": "1.0.0",
+  "dependencies": {
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.51",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "global": "^4.4.0",
+    "gpx-route-generator-core": "git+https://git@gitlab.com/3nvy/gpx-route-generator-core.git",
+    "js-file-download": "^0.4.11",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "sphere-knn": "^1.4.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "react-scripts start",
+    "build": "rm -rf build/ && react-scripts build && npm run rename-cache-manifest && npm run build-sw",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build-sw": "node ./src/sw-build.js",
+    "rename-cache-manifest": "mv build/precache-manifest.*.js build/precache-manifest_v1.0.0.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "engines": {
+    "node": "12.16.x"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "workbox-build": "^5.1.3"
+  }
+}

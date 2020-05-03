@@ -1,0 +1,80 @@
+html, body {
+  height: 100%
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-logo svg {
+  margin-right: 15px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex: 1
+}
+
+#main-container {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 90%;
+}
+
+.coords-textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 10px;
+  margin: 50px 0;
+}
+
+.submit-btn {
+  width: 100%;
+  border-radius: 0 !important;
+  height: 50px;
+}
+
+.MuiToolbar-regular {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notification-snack {
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+
+
+@media (max-width: 600px){
+  .coords-textarea {
+    margin: 0;
+    border: none;
+  }
+
+  #main-container {
+    max-height: 100%;
+  }
+
+  .mobile-hidden {
+    display: none;  
+  }
+
+  .notification-snack {
+    margin: 0;
+  }
+}
+
+
