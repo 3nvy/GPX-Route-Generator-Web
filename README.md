@@ -7,6 +7,8 @@ You can access the live version at https://routegen.herokuapp.com/
 
 # Run a Local Instance
 
+**- Requires NodeJS -**
+
 Install dependencies 
 <pre>
 npm i
