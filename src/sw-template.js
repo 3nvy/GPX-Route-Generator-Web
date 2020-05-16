@@ -11,7 +11,7 @@
  * See https://goo.gl/2aRDsh
  */
 
-var CACHE_VERSION = "1.1.0";
+var CACHE_VERSION = "1.1.2";
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 

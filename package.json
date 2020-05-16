@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-sw": "node ./src/sw-build.js",
-    "rename-cache-manifest": "mv build/precache-manifest.*.js build/precache-manifest_v1.1.0.js"
+    "rename-cache-manifest": "mv build/precache-manifest.*.js build/precache-manifest_v1.1.2.js"
   },
   "eslintConfig": {
     "extends": "react-app"
