@@ -17,7 +17,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "sphere-knn": "^1.4.0"
+    "sphere-knn": "^1.4.0",
+    "workerize-loader": "^1.2.0"
   },
   "scripts": {
     "start": "node server.js",

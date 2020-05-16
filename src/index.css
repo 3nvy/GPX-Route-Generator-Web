@@ -8,6 +8,10 @@ html, body {
   flex-direction: column;
 }
 
+.cover {
+  z-index:10 !important;
+}
+
 .header-logo {
   display: flex;
   flex-direction: row;
@@ -38,13 +42,18 @@ main {
   height: 100%;
   resize: none;
   padding: 10px;
-  margin: 50px 0;
+  margin: 50px 0 25px;
 }
 
+.path-btn,
 .submit-btn {
   width: 100%;
   border-radius: 0 !important;
   height: 50px;
+}
+
+.path-btn.selected {
+  background: #31529e!important;
 }
 
 .MuiToolbar-regular {
@@ -55,6 +64,29 @@ main {
 .notification-snack {
   margin-bottom: 20px;
   margin-top: -30px;
+}
+
+.btn-group {
+  display: -webkit-box;display: -ms-flexbox;display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.slider-group {
+  display: -webkit-box;display: -ms-flexbox;display: flex;
+  -webkit-box-align: center;-ms-flex-align: center;align-items: center;
+  width: 100%;
+  padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.slider-icon {
+  margin-right: 15px;
+  color: #4791db;
+}
+
+.is-hidden {
+  display: none;
 }
 
 
@@ -74,6 +106,14 @@ main {
 
   .notification-snack {
     margin: 0;
+  }
+
+  .btn-group {
+    margin: 2px 0;
+  }
+
+  .slider-group {
+    margin-bottom: 0;
   }
 }
 
