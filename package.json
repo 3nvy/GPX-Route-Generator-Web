@@ -1,6 +1,6 @@
 {
   "name": "gpx-route-generator-web",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-sw": "node ./src/sw-build.js",
-    "rename-cache-manifest": "mv build/precache-manifest.*.js build/precache-manifest_v1.0.0.js"
+    "rename-cache-manifest": "mv build/precache-manifest.*.js build/precache-manifest_v1.1.0.js"
   },
   "eslintConfig": {
     "extends": "react-app"

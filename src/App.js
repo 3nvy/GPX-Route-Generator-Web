@@ -48,11 +48,11 @@ const App = () => {
 
   const saveFile = (fileData) => {
     const filename = prompt("Select file name", "default");
+    setLoading(false);
     if (!filename) return;
-
     fileDownload(fileData, `${filename}.gpx`);
     setSuccess(true);
-    setLoading(false);
+
     setCoords("");
   };
 
