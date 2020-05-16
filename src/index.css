@@ -64,6 +64,7 @@ main {
 .notification-snack {
   margin-bottom: 20px;
   margin-top: -30px;
+  z-index: 10;
 }
 
 .btn-group {
@@ -71,6 +72,21 @@ main {
   width: 100%;
   margin-bottom: 25px;
 }
+
+.row {
+  display: -webkit-box;display: -ms-flexbox;display: flex;
+  -webkit-box-align: center;-ms-flex-align: center;align-items: center
+}
+
+.info-title h2{
+  font-size: 30px !important;
+}
+
+.info-title svg{
+  font-size: 40px;  
+  cursor: pointer;
+}
+
 
 .slider-group {
   display: -webkit-box;display: -ms-flexbox;display: flex;
@@ -87,6 +103,10 @@ main {
 
 .is-hidden {
   display: none;
+}
+
+.floating-icon {
+  margin-right: 15px !important;
 }
 
 
@@ -115,6 +135,19 @@ main {
   .slider-group {
     margin-bottom: 0;
   }
+
+  .floating-icon {
+    position: absolute !important;
+    top: 65px;
+    right: 11px;
+    margin-right: 0 !important;
+  }
+
+  .info-dialog .MuiDialog-paper {
+    margin:0;
+    max-height: 100%;
+  }
+
 }
 
 

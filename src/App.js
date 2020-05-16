@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import fileDownload from "js-file-download";
+import worker from "workerize-loader!./worker"; // eslint-disable-line import/no-webpack-loader-syntax
 
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -16,7 +17,9 @@ import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import Alert from "./components/Alert";
 import Slider from "./components/Slider";
 import LoopIcon from "@material-ui/icons/Loop";
-import worker from "workerize-loader!./worker"; // eslint-disable-line import/no-webpack-loader-syntax
+import PriorityHighIcon from "@material-ui/icons/PriorityHigh";
+import Fab from "@material-ui/core/Fab";
+import Info from "./components/Info";
 
 const workerInstance = worker();
 
@@ -41,6 +44,7 @@ const App = () => {
   const [normalPath, setNormalPath] = useState(true);
   const [twoOptCount, setTwoOptCount] = useState(5);
   const [loading, setLoading] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const saveFile = (fileData) => {
     const filename = prompt("Select file name", "default");
@@ -99,6 +103,8 @@ const App = () => {
         <CircularProgress color="inherit" />
       </Backdrop>
 
+      <Info open={showInfo} show={setShowInfo} />
+
       <AppBar position="relative">
         <Toolbar>
           <div className="header-logo">
@@ -121,9 +127,14 @@ const App = () => {
       </AppBar>
       <main>
         <Container maxWidth="sm" id="main-container">
-          <Typography className="mobile-hidden" variant="h2" component="h2">
-            GPX File Generation
-          </Typography>
+          <div class="row">
+            <Fab className="floating-icon" color="primary" aria-label="add">
+              <PriorityHighIcon onClick={() => setShowInfo(true)} />
+            </Fab>
+            <Typography className="mobile-hidden" variant="h2" component="h2">
+              GPX File Generation
+            </Typography>
+          </div>
           <textarea className="coords-textarea" placeholder="Paste coordinates here..." value={coords} onChange={handleChange}></textarea>
 
           {error ? (
