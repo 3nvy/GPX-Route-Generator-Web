@@ -11,7 +11,7 @@
  * See https://goo.gl/2aRDsh
  */
 
-var CACHE_VERSION = "1.1.2";
+var CACHE_VERSION = "1.1.4";
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
@@ -43,5 +43,5 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST.concat(self.__precacheManifest || []), {});
 
 workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"), {
-  blacklist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
+  blacklist: [/^\/api/, /^\/_/, /\/[^/?]+\.[^/]+$/],
 });

@@ -23,6 +23,8 @@ import Info from "./components/Info";
 
 const workerInstance = worker();
 
+const APP_VERSION = process.env.REACT_APP_VERSION;
+
 const checkDataFormat = (coords) => {
   return (
     coords &&
@@ -56,6 +58,17 @@ const App = () => {
     setCoords("");
   };
 
+  // Check for updates
+  useEffect(() => {
+    fetch("/api/info")
+      .then((res) => res.json())
+      .then((data) => {
+        const latestVersion = data.latest_version;
+        if (latestVersion !== APP_VERSION) window.location.reload(true);
+      });
+  }, []);
+
+  // Web worker listener
   useEffect(() => {
     workerInstance.addEventListener("message", ({ data: fileData }) => {
       if (typeof fileData !== "string") return;
