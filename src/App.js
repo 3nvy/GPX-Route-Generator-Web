@@ -20,6 +20,7 @@ import LoopIcon from "@material-ui/icons/Loop";
 import PriorityHighIcon from "@material-ui/icons/PriorityHigh";
 import Fab from "@material-ui/core/Fab";
 import Info from "./components/Info";
+import * as serviceWorker from "./serviceWorker";
 
 const workerInstance = worker();
 
@@ -64,7 +65,15 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => {
         const latestVersion = data.latest_version;
-        if (latestVersion !== APP_VERSION) window.location.reload(true);
+        navigator.serviceWorker.ready.then(() => {
+          if (latestVersion !== APP_VERSION)
+            navigator.serviceWorker.controller.postMessage({
+              type: "CLEAR_CACHE",
+              version: latestVersion,
+            });
+
+          navigator.serviceWorker.addEventListener("message", (event) => event.data.msg === "CACHE_CLEARED" && window.location.reload(true));
+        });
       });
   }, []);
 
@@ -125,6 +134,7 @@ const App = () => {
             <Typography variant="h6" color="inherit" noWrap>
               GPX Route Generator
             </Typography>
+            <span className="app-version">{APP_VERSION}</span>
           </div>
 
           {loading ? (
@@ -140,7 +150,7 @@ const App = () => {
       </AppBar>
       <main>
         <Container maxWidth="sm" id="main-container">
-          <div class="row">
+          <div className="row">
             <Fab className="floating-icon" color="primary" aria-label="add">
               <PriorityHighIcon onClick={() => setShowInfo(true)} />
             </Fab>

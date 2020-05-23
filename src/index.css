@@ -16,10 +16,18 @@ html, body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 }
 
 .header-logo svg {
   margin-right: 15px;
+}
+
+.app-version {
+  font-size: 9px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
 }
 
 main {
