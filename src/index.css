@@ -1,4 +1,5 @@
 html, body {
+  overflow: hidden;
   height: 100%
 }
 
@@ -58,6 +59,14 @@ main {
   width: 100%;
   border-radius: 0 !important;
   height: 50px;
+  min-height:50px;
+}
+
+.inject-btn {
+  width: 30px;
+  border-radius: 0 !important;
+  height: 50px;
+  min-height:50px;
 }
 
 .path-btn.selected {
@@ -149,6 +158,8 @@ main {
     top: 65px;
     right: 11px;
     margin-right: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
   }
 
   .info-dialog .MuiDialog-paper {

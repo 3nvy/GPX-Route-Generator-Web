@@ -4,6 +4,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import CloseIcon from "@material-ui/icons/Close";
+import EjectIcon from "@material-ui/icons/Eject";
 
 const Info = ({ open, show }) => (
   <Dialog className="info-dialog" open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
@@ -15,6 +16,18 @@ const Info = ({ open, show }) => (
     </DialogTitle>
 
     <DialogContent>
+      <DialogTitle id="alert-dialog-title" style={{ paddingLeft: 0 }}>
+        <div className="row">
+          <EjectIcon />
+          Import GPX File
+        </div>
+      </DialogTitle>
+      <DialogContentText id="alert-dialog-description">
+        Grabs the coordinates of a GPX files and place them on the textarea for optimization.
+      </DialogContentText>
+
+      <br></br>
+
       <DialogTitle id="alert-dialog-title" style={{ paddingLeft: 0 }}>
         Normal Path
       </DialogTitle>

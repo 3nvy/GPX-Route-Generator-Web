@@ -20,10 +20,9 @@ import LoopIcon from "@material-ui/icons/Loop";
 import PriorityHighIcon from "@material-ui/icons/PriorityHigh";
 import Fab from "@material-ui/core/Fab";
 import Info from "./components/Info";
-import * as serviceWorker from "./serviceWorker";
+import FileReader from "./FileReader";
 
 const workerInstance = worker();
-
 const APP_VERSION = process.env.REACT_APP_VERSION;
 
 const checkDataFormat = (coords) => {
@@ -151,8 +150,8 @@ const App = () => {
       <main>
         <Container maxWidth="sm" id="main-container">
           <div className="row">
-            <Fab className="floating-icon" color="primary" aria-label="add">
-              <PriorityHighIcon onClick={() => setShowInfo(true)} />
+            <Fab className="floating-icon" color="primary" aria-label="add" onClick={() => setShowInfo(true)}>
+              <PriorityHighIcon />
             </Fab>
             <Typography className="mobile-hidden" variant="h2" component="h2">
               GPX File Generation
@@ -177,6 +176,7 @@ const App = () => {
           )}
 
           <div className="btn-group">
+            <FileReader cb={setCoords} />
             <Button className={`path-btn ${normalPath ? "selected" : ""}`} variant="contained" color="primary" onClick={() => setNormalPath(true)}>
               Normal Path
             </Button>
