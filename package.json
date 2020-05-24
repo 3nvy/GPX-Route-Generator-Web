@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "global": "^4.4.0",
@@ -16,6 +17,7 @@
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-file-reader": "^1.1.4",
     "react-scripts": "3.4.1",
     "sphere-knn": "^1.4.0",
     "workerize-loader": "^1.2.0"
@@ -23,11 +25,11 @@
   "scripts": {
     "start": "node server.js",
     "dev": "react-scripts start",
-    "build": "rm -rf build/ && react-scripts build && npm run rename-cache-manifest && npm run build-sw",
+    "build": "rm -rf build/ && react-scripts build && npm run build-sw && chmod u+x postbuild.sh && postbuild.sh",
+    "heroku-postbuild": "rm -rf build/ && react-scripts build && npm run build-sw && chmod u+x postbuild.sh && ./postbuild.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-sw": "node ./src/sw-build.js",
-    "rename-cache-manifest": "mv build/precache-manifest.*.js build/precache-manifest_v1.1.2.js"
+    "build-sw": "node ./src/sw-build.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "workbox-build": "^5.1.3"
   }
 }
